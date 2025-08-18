@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TVS Angola - Catering, eventos e consultoria gastronômica com excelência. Conheça nossos serviços e projetos.">
+    <title>TVS - The Sister's Vision Services | Catering e Eventos em Angola</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">   
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <script src="https://kit.fontawesome.com/a2d0b5c6f0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+
+    <!-- Hero Section -->
+    <header class="hero" role="banner">
+        <img src="assets/logo1.png" alt="Logotipo TVS" class="logo">
+        <h1>The Sister's Vision Services</h1>
+        <p><strong>O FUTURO É HUMANO</strong></p>
+        <p><strong>Desde 2018</strong></p>
+    </header>
+
+    <!-- Sobre a Empresa -->
+    <section id="about">
+        <h2 class="section-title">Nossa História</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2018</h3>
+                    <p>As irmãs Laeticia e Linda fundam a TVS com a primeira cozinha, iniciando um processo de 18 meses de desenvolvimento de produtos.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>Abertura da primeira loja física, seguida pela adaptação para formato online durante a pandemia.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2022</h3>
+                    <p>Retomada das operações físicas e consolidação como referência em catering e eventos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fundadoras -->
+    <section id="founders">
+        <h2 class="section-title">As Fundadoras</h2>
+        <div class="founders">
+            <!-- Card Laeticia -->
+            <article class="founder-card" onclick="openModal('laeticia')">
+                <div class="founder-img">
+                    <img src="assets/Laeticia24.jpg" alt="Foto de Laeticia Makunga">
+                </div>
+                <div class="founder-info">
+                    <h3>Laeticia Makunga</h3>
+                    <p>Licenciada em Contabilidade e Auditoria, com pós-graduação em Marketing e Gestão de Empresas...</p>
+                    <p class="founder-quote">"Liderar é servir - valorizando pessoas, compromisso e visão clara."</p>
+                    <button class="btn-modal">Ver perfil completo</button>
+                </div>
+            </article>
+
+            <!-- Card Linda -->
+            <article class="founder-card" onclick="openModal('linda')">
+                <div class="founder-img">
+                    <img src="assets/Linda22.jpg" alt="Foto de Linda Walelo">
+                </div>
+                <div class="founder-info">
+                    <h3>Linda Walelo</h3>
+                    <p>Formada em Contabilidade/Finanças e Gastronomia pela Waitrose London...</p>
+                    <p class="founder-quote">"Transformamos desafios em oportunidades..."</p>
+                    <button class="btn-modal">Ver perfil completo</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+<!-- Modal Laeticia -->
+<div id="laeticia-modal" class="modal" role="dialog" aria-labelledby="laeticia-name">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()" aria-label="Fechar">&times;</span>
+        <div class="modal-body">
+            <div class="modal-img">
+                <img src="assets/Laeticia1.jpg" alt="Foto de Laeticia Makunga">
+            </div>
+            <div class="modal-text">
+                <h2 id="laeticia-name">Laeticia Makunga</h2>
+                <div class="modal-bio">
+                    <p><strong>Formação:</strong> Licenciada em Contabilidade e Auditoria, pós-graduada em Marketing e Gestão de Empresas</p>
+                    <p><strong>Cargo Atual:</strong> Diretora Geral da BELA</p>
+                </div>
+                
+                <h3>Trajetória Profissional</h3>
+                <ul>
+                    <li>Fundadora de holding com três empresas</li>
+                    <li>Liderou expansão internacional da BELA</li>
+                    <li>Mais de 12 anos em liderança empresarial</li>
+                </ul>
+                
+                <h3>Filosofia</h3>
+                <blockquote>
+                    "Minha abordagem baseia-se no princípio de que liderar é servir - valorizando pessoas, compromisso e visão clara para alcançar resultados extraordinários."
+                </blockquote>
+
+                <!-- Redes sociais -->
+                <div class="modal-socials">
+                    <a href="https://linkedin.com/in/laeticia" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com/laeticia" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/laeticia" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/244900000000" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:laeticia@tvs.com" aria-label="E-mail">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Linda -->
+<div id="linda-modal" class="modal" role="dialog" aria-labelledby="linda-name">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()" aria-label="Fechar">&times;</span>
+        <div class="modal-body">
+            <div class="modal-img">
+                <img src="assets/Linda1.jpg" alt="Foto de Linda Walelo">
+            </div>
+            <div class="modal-text">
+                <h2 id="linda-name">Linda Walelo</h2>
+                <div class="modal-bio">
+                    <p><strong>Formação:</strong> Contabilidade/Finanças e Gastronomia (Waitrose London)</p>
+                    <p><strong>Especialização:</strong> Confeitaria Inclusiva (Brasil)</p>
+                </div>
+                
+                <h3>Contribuições</h3>
+                <ul>
+                    <li>Co-fundadora da TVS desde 2018</li>
+                    <li>Desenvolveu linha de produtos exclusivos</li>
+                    <li>Liderou transição para modelo digital</li>
+                </ul>
+                
+                <h3>Visão</h3>
+                <blockquote>
+                    "A gastronomia é uma linguagem universal que transforma realidades. Nossa jornada prova que é possível superar desafios através da criatividade e resiliência."
+                </blockquote>
+
+                <!-- Redes sociais -->
+                <div class="modal-socials">
+                    <a href="https://linkedin.com/in/linda" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com/linda" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/linda" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/244900000000" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:laeticia@tvs.com" aria-label="E-mail">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+     <!-- Serviços -->
+<section id="services" class="services">
+  <h2 class="section-title">Nossos Serviços</h2>
+  <div class="services-grid">
+      
+    <article class="service-card" data-service="catering">
+      <i class="fas fa-utensils service-icon"></i>
+      <h3>Catering Corporativo</h3>
+      <p>Serviços completos para eventos empresariais.</p>
+    </article>
+    
+    <article class="service-card" data-service="eventos">
+      <i class="fas fa-glass-cheers service-icon"></i>
+      <h3>Eventos Especiais</h3>
+      <p>Casamentos, aniversários e celebrações exclusivas.</p>
+    </article>
+    
+    <article class="service-card" data-service="consultoria">
+      <i class="fas fa-concierge-bell service-icon"></i>
+      <h3>Consultoria Gastronômica</h3>
+      <p>Desenvolvimento de conceitos e menus.</p>
+    </article>
+  
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="service-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    
+    <!-- Ícone do serviço -->
+    <i id="modal-icon" class="service-icon"></i>
+    
+    <h3 id="modal-title"></h3>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+
+
+<!-- Galeria de Projetos -->
+<section id="gallery">
+  <h2 class="section-title">Nossos Projectos</h2>
+  <div class="swiper gallery-swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Evento Corporativo -->
+      <div class="swiper-slide">
+        <figure class="gallery-item"
+          data-title="Evento Corporativo"
+          data-desc="Organização completa para 200 convidados: buffet variado, coffee break, estrutura audiovisual e equipe de apoio dedicada."
+          data-img="assets/Evento Corporativo.webp">
+          <img src="assets/Evento Corporativo.webp" alt="Evento Corporativo para 200 convidados">
+          <figcaption class="gallery-caption">
+            <h3>Evento Corporativo</h3>
+            <p>Serviço completo para 200 convidados</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Casamento Premium -->
+      <div class="swiper-slide">
+        <figure class="gallery-item"
+          data-title="Casamento Premium"
+          data-desc="Celebração inesquecível com buffet completo, decoração personalizada, música ao vivo e acompanhamento de nossa equipe do início ao fim."
+          data-img="assets/Coquetel de Lançamento.jpeg">
+          <img src="assets/Coquetel de Lançamento.jpeg" alt="Casamento Premium com buffet completo">
+          <figcaption class="gallery-caption">
+            <h3>Casamento Premium</h3>
+            <p>Buffet completo e decoração</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Café da Manhã Executivo -->
+      <div class="swiper-slide">
+        <figure class="gallery-item"
+          data-title="Café da Manhã Executivo"
+          data-desc="Recepção elegante para 50 pessoas: mesa de frutas, pães artesanais, sucos naturais, café gourmet e atendimento personalizado."
+          data-img="assets/Reunião informal.jpg">
+          <img src="assets/Reunião informal.jpg" alt="Café da Manhã Executivo para 50 pessoas">
+          <figcaption class="gallery-caption">
+            <h3>Café da Manhã Executivo</h3>
+            <p>Para equipe de 50 pessoas</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Coquetel de Lançamento -->
+      <div class="swiper-slide">
+        <figure class="gallery-item"
+          data-title="Coquetel de Lançamento"
+          data-desc="Evento sofisticado com drinks exclusivos, menu degustação, equipe de bartenders profissionais e música ambiente para 120 convidados."
+          data-img="assets/Coquetel de Lançamento.jpeg">
+          <img src="assets/Coquetel de Lançamento.jpeg" alt="Coquetel de Lançamento com drinks especiais">
+          <figcaption class="gallery-caption">
+            <h3>Coquetel de Lançamento</h3>
+            <p>Menu degustação e drinks especiais</p>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <!-- Controles -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+
+<!-- Modal de Projeto -->
+<div id="project-modal" class="modal" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <span class="modal-close" aria-label="Fechar">&times;</span>
+    <div class="modal-body">
+      <div class="modal-img">
+        <img id="modal-project-img" src="" alt="Projeto">
+      </div>
+      <div class="modal-text">
+        <h2 id="modal-project-title"></h2>
+        <p id="modal-project-desc"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Depoimentos -->
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">Depoimentos</h2>
+        <div class="testimonials-grid">
+            <article class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>O catering da TVS para nosso evento anual superou todas as expectativas. A atenção aos detalhes e a qualidade da comida foram excepcionais.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="assets/logo1.png" alt="Foto de Maria Silva">
+                    </div>
+                    <div class="author-info">
+                        <h4>Maria Silva</h4>
+                        <p>Diretora de RH, Empresa X</p>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>Nosso casamento foi perfeito graças à equipe da TVS. Eles entenderam exatamente nossa visão e executaram tudo impecavelmente.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="assets/logo1.png" alt="Carlos e Ana no casamento">
+                    </div>
+                    <div class="author-info">
+                        <h4>Carlos e Ana</h4>
+                        <p>Noivos</p>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>Trabalhamos com a TVS em vários eventos e sempre entregam qualidade consistente e serviço profissional. Recomendo sem reservas.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="assets/logo1.png" alt="Foto de João Mendes">
+                    </div>
+                    <div class="author-info">
+                        <h4>João Mendes</h4>
+                        <p>Gerente de Eventos</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contato -->
+<section id="contact" class="contact-section">
+  <h2 class="section-title">Entre em Contato</h2>
+  
+  <div class="contact-grid">
+    
+    <!-- Card do Formulário -->
+    <div class="contact-card">
+      <h3>Envie-nos uma mensagem</h3>
+      <form action="https://formsubmit.co/seu-email@tvs.com" method="POST">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="service">Serviço de Interesse</label>
+          <select id="service" name="service">
+            <option value="">Selecione...</option>
+            <option value="catering">Catering Corporativo</option>
+            <option value="eventos">Eventos Especiais</option>
+            <option value="consultoria">Consultoria Gastronômica</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Enviar Mensagem
+        </button>
+      </form>
+    </div>
+    
+    <!-- Card das Informações -->
+    <div class="contact-card">
+      <h3>Fale Conosco</h3>
+      <p><i class="fas fa-phone"></i> +244 999 999 999</p>
+      <p><i class="fas fa-envelope"></i> contacto@tvs.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, nº 123, Luanda</p>
+
+      <h3>Siga-nos</h3>
+      <div class="social-links">
+        <a href="https://facebook.com/tvs" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/tvs" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/tvs" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/244999999999" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <h3>Localização</h3>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.123456789!2d13.2356789!3d-8.8351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a1234567890abcd%3A0xabcdef123456789!2sO%20Teu%20Local!5e0!3m2!1spt-PT!2sao!4v1692212345678!5m2!1spt-PT!2sao" 
+          width="100%" 
+          height="250" 
+          style="border:0;" 
+          allowfullscreen 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+
+    <!-- Missão -->
+<section id="mission" class="mission-section">
+  <div class="mission-content">
+    <h2 class="section-title">🌍 Nossa Missão</h2>
+    <p class="mission-text">
+      Transformar ideias em negócios duradouros, promovendo <strong>desenvolvimento</strong>, <strong>empregabilidade</strong> e <strong>impacto positivo</strong> nos contextos onde atuamos.  
+    </p>
+    <p class="mission-highlight">
+      <em>O FUTURO É HUMANO</em>, construído através de <strong>liderança servidora</strong>, <strong>excelência operacional</strong> e <strong>inovação sustentável</strong>.
+    </p>
+  </div>
+</section>
+
+ <!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+
+    <!-- Marca -->
+    <div class="footer-brand">
+      <img src="assets/logo1.png" alt="Logotipo TVS" class="footer-logo">
+      <p>THE SISTER'S VISION SERVICES, LDA</p>
+      <p>Catering e Eventos | Prestação de Serviços</p>
+
+      <div class="social-links">
+        <a href="https://facebook.com/tvs" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/tvs" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/tvs" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/244999999999" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- Links rápidos -->
+    <nav class="footer-links">
+      <a href="#about">Sobre Nós</a>
+      <a href="#services">Serviços</a>
+      <a href="#gallery">Projectos</a>
+      <a href="#testimonials">Depoimentos</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+
+    <!-- Contato -->
+    <div class="footer-contact">
+      <p><a href="mailto:contacto@tvs.co.ao">contacto@tvs.co.ao</a></p>
+      <p>+244 999 999 999</p>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> TVS. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+<!-- JavaScript -->
+    <script src="script.js" defer></script>  
+    <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  // Atualiza automaticamente o ano no footer
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("year").textContent = new Date().getFullYear();
+  });
+</script>
+
+</body>
+</html>
