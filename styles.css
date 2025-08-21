@@ -998,21 +998,12 @@ footer {
     color: rgba(255,255,255,0.7);
 }
 .footer-logo {
-  width: 80px;              /* tamanho fixo (podes ajustar) */
-  height: 80px;
-  border-radius: 50%;       /* deixa circular */
-  object-fit: cover;        /* mantém proporção e preenche */
-  display: block;
-
-  border: 3px solid #fff;   /* borda branca (podes trocar para a cor principal) */
-  transition: all 0.3s ease;
+  width: 80px;          /* define o tamanho (podes ajustar) */
+  height: 80px;         /* mantém altura igual à largura */
+  border-radius: 50%;   /* deixa a imagem circular */
+  object-fit: cover;    /* garante que a imagem preencha sem distorcer */
+  display: block;       /* remove espaçamento extra */
 }
-
-.footer-logo:hover {
-  transform: scale(1.05);   /* efeito de zoom suave */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* sombra no hover */
-}
-
 
 
 /* ===== Responsivo ===== */
