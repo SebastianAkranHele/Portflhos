@@ -306,7 +306,11 @@ section {
 
 /* E-mail */
 .modal-socials a[aria-label="E-mail"] {
-  background: #444;
+  background: #d32533;
+}
+/* Telefone */
+.modal-socials a[aria-label="Telefone"] {
+  background: #25D366;
 }
 
 /* Hover */
