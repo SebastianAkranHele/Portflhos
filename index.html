@@ -12,7 +12,7 @@
     <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<link rel="icon" href="assets/favicon .ico" type="image/x-icon">
 
   <script src="https://kit.fontawesome.com/a2d0b5c6f0.js" crossorigin="anonymous"></script>
 
@@ -24,7 +24,7 @@
 
     <!-- Hero Section -->
     <header class="hero" role="banner">
-        <img src="assets/logo1.png" alt="Logotipo TVS" class="logo">
+      
         
     </header>
 
@@ -123,10 +123,10 @@
                     <a href="https://facebook.com/laeticia" target="_blank" aria-label="Facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="https://wa.me/244947208008" target="_blank" aria-label="WhatsApp">
+                    <a href="#" target="_blank" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="mailto:laeticia@tvs.com" aria-label="E-mail">
+                    <a href="mailto:culturascatering@thesistervision.com" aria-label="E-mail">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="tel:+244947208008" aria-label="Telefone">
@@ -171,7 +171,7 @@
                     <a href="https://linkedin.com/in/linda" target="_blank" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://instagram.com/linda" target="_blank" aria-label="Instagram">
+                    <a href="https://www.instagram.com/ldeon3?igsh=MXJzcHJscDUyaGdhag%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a href="https://facebook.com/linda" target="_blank" aria-label="Facebook">
@@ -180,7 +180,7 @@
                     <a href="https://wa.me/244933017376" target="_blank" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="mailto:laeticia@tvs.com" aria-label="E-mail">
+                    <a href="mailto:culturascatering@thesistervision.com" aria-label="E-mail">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="tel:+244933017376" aria-label="Telefone">
@@ -382,7 +382,7 @@
     <!-- Card do Formulário -->
     <div class="contact-card">
       <h3>Envie-nos uma mensagem</h3>
-      <form action="https://formsubmit.co/culturascatering@thesistervision.com" method="POST">
+      <form id="contact-form">
         <div class="form-group">
           <label for="name">Nome</label>
           <input type="text" id="name" name="name" required>
@@ -413,7 +413,10 @@
           <i class="fas fa-paper-plane"></i> Enviar Mensagem
         </button>
       </form>
+      <!-- Status -->
+      <p id="form-status" style="margin-top:10px;"></p>
     </div>
+ 
     
     <!-- Card das Informações -->
     <div class="contact-card">
@@ -560,6 +563,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 </body>
 </html>

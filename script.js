@@ -5,12 +5,14 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Classe para gerenciar modais e galeria
     class FoundersModalSystem {
         constructor() {
             this.modals = document.querySelectorAll('.modal');
-            this.initModals();
-            this.initSwiper();
-            this.setupEventDelegation();
+            this.initModals();       // Inicializa os modais (fecha todos no início)
+            this.initSwiper();       // Inicializa o Swiper se existir
+            this.setupEventDelegation(); // Configura eventos para abrir/fechar modais
         }
 
         initModals() {
@@ -19,12 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         setupEventDelegation() {
+            // Delegação de eventos para abrir/fechar modais
             document.addEventListener('click', (e) => {
                 const founderCard = e.target.closest('.founder-card');
                 const modalButton = e.target.closest('.btn-modal');
                 const closeButton = e.target.closest('.close-modal');
                 const modalBackground = e.target.classList.contains('modal');
 
+                // Abrir modal ao clicar no card da fundadora
                 if (founderCard && !modalButton) {
                     e.preventDefault();
                     const founderId = founderCard.getAttribute('data-founder') || 
@@ -32,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (founderId) this.openModal(founderId);
                 }
 
+                // Abrir modal ao clicar no botão do card
                 if (modalButton) {
                     e.preventDefault();
                     e.stopPropagation();
@@ -41,22 +46,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (founderId) this.openModal(founderId);
                 }
 
+                // Fechar modal ao clicar no botão X
                 if (closeButton) {
                     e.preventDefault();
                     this.closeAllModals();
                 }
 
+                // Fechar modal ao clicar no fundo
                 if (modalBackground) {
                     this.closeAllModals();
                 }
             });
 
-            // Fechar com ESC
+            // Fechar com tecla ESC
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') this.closeAllModals();
             });
 
-            // Clique nos itens da galeria (usando data-attributes)
+            // Clique nos itens da galeria para abrir modal de projeto
             document.querySelectorAll('.gallery-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const imgSrc = item.dataset.img || item.querySelector('img').src;
@@ -69,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
+        // Abrir modal pelo ID
         openModal(modalId) {
             const modal = document.getElementById(`${modalId}-modal`);
             if (!modal) {
@@ -76,19 +84,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            this.closeAllModals();
+            this.closeAllModals(); // Fecha outros modais antes
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Bloqueia scroll ao abrir modal
 
             modal.setAttribute('aria-hidden', 'false');
             document.querySelector(`[aria-controls="${modalId}-modal"]`)?.setAttribute('aria-expanded', 'true');
 
+            // Foca no botão de fechar para acessibilidade
             setTimeout(() => {
                 const closeBtn = modal.querySelector('.close-modal');
                 if (closeBtn) closeBtn.focus();
             }, 100);
         }
 
+        // Fecha todos os modais
         closeAllModals() {
             this.modals.forEach(modal => {
                 modal.style.display = 'none';
@@ -96,11 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             document.body.style.overflow = '';
             
+            // Atualiza atributos ARIA dos botões
             document.querySelectorAll('[aria-expanded="true"]').forEach(btn => {
                 btn.setAttribute('aria-expanded', 'false');
             });
         }
 
+        // Modal para projetos (galeria)
         openProjectModal(imgSrc, title, desc, details = "") {
             const modal = document.getElementById('project-modal');
             if (!modal) return;
@@ -119,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'hidden';
         }
 
+        // Inicializa carrossel Swiper (se disponível)
         initSwiper() {
             if (typeof Swiper !== 'undefined') {
                 new Swiper('.gallery-swiper', {
@@ -148,20 +161,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Instancia o sistema de modais
     new FoundersModalSystem();
 
-    // Acessibilidade: foco com TAB
+    // Acessibilidade: indica quando o usuário está usando teclado
     document.addEventListener('keyup', function(e) {
         if (e.key === 'Tab') {
             document.documentElement.classList.add('keyboard-focus');
         }
     });
-
     document.addEventListener('mousedown', function() {
         document.documentElement.classList.remove('keyboard-focus');
     });
 
-    // Scroll suave para âncoras
+    // Scroll suave para links âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -172,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validação formulário contato
+    // Validação simples do formulário de contato
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -181,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = this.querySelector('#email');
             const message = this.querySelector('#message');
             
+            // Validação de nome
             if (!name.value.trim()) {
                 isValid = false;
                 name.style.borderColor = 'red';
@@ -188,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name.style.borderColor = '#ddd';
             }
             
+            // Validação de email
             if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
                 isValid = false;
                 email.style.borderColor = 'red';
@@ -195,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 email.style.borderColor = '#ddd';
             }
             
+            // Validação de mensagem
             if (!message.value.trim()) {
                 isValid = false;
                 message.style.borderColor = 'red';
@@ -209,57 +225,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-   const modal = document.getElementById("service-modal");
-const closeBtn = document.querySelector(".close-btn");
-const modalTitle = document.getElementById("modal-title");
-const modalText = document.getElementById("modal-text");
-const modalIcon = document.getElementById("modal-icon");
+    // Modal para serviços (abre ao clicar nos cards)
+    const modal = document.getElementById("service-modal");
+    const closeBtn = document.querySelector(".close-btn");
+    const modalTitle = document.getElementById("modal-title");
+    const modalText = document.getElementById("modal-text");
+    const modalIcon = document.getElementById("modal-icon");
 
-const servicesData = {
-  catering: {
-    title: "Catering Corporativo",
-    text: "Serviços completos para eventos empresariais, com menus personalizados e padrões de excelência.",
-    icon: "fas fa-utensils"
-  },
-  eventos: {
-    title: "Eventos Especiais",
-    text: "Casamentos, aniversários e celebrações com toque exclusivo e atenção aos detalhes.",
-    icon: "fas fa-glass-cheers"
-  },
-  consultoria: {
-    title: "Consultoria Gastronômica",
-    text: "Desenvolvimento de conceitos, menus e operações para empreendimentos alimentícios.",
-    icon: "fas fa-concierge-bell"
-  }
-};
+    // Dados dos serviços
+    const servicesData = {
+        catering: {
+            title: "Catering Corporativo",
+            text: "Serviços completos para eventos empresariais, com menus personalizados e padrões de excelência.",
+            icon: "fas fa-utensils"
+        },
+        eventos: {
+            title: "Eventos Especiais",
+            text: "Casamentos, aniversários e celebrações com toque exclusivo e atenção aos detalhes.",
+            icon: "fas fa-glass-cheers"
+        },
+        consultoria: {
+            title: "Consultoria Gastronômica",
+            text: "Desenvolvimento de conceitos, menus e operações para empreendimentos alimentícios.",
+            icon: "fas fa-concierge-bell"
+        }
+    };
 
-// Abre o modal quando clicar num card
-document.querySelectorAll(".service-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const service = card.getAttribute("data-service");
-    modalTitle.innerText = servicesData[service].title;
-    modalText.innerText = servicesData[service].text;
-    modalIcon.className = servicesData[service].icon + " service-icon";
-    modal.style.display = "flex";
-  });
+    // Abre o modal de serviços ao clicar no card
+    document.querySelectorAll(".service-card").forEach(card => {
+        card.addEventListener("click", () => {
+            const service = card.getAttribute("data-service");
+            modalTitle.innerText = servicesData[service].title;
+            modalText.innerText = servicesData[service].text;
+            modalIcon.className = servicesData[service].icon + " service-icon";
+            modal.style.display = "flex";
+        });
+    });
+
+    // Fecha ao clicar no X
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Fecha ao clicar fora do modal
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
 });
 
-// Fecha ao clicar no X
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// Fecha ao clicar fora do modal
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-
-
-});
-
-// Funções globais
+// Funções globais para abrir/fechar modais
 function openModal(modalId) {
     const modalSystem = new FoundersModalSystem();
     modalSystem.openModal(modalId);
@@ -270,12 +287,75 @@ function closeModal() {
     modalSystem.closeAllModals();
 }
 
+// Controle do menu hambúrguer
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("open"); // anima o hambúrguer
-  navLinks.classList.toggle("active"); // mostra/esconde menu
+    menuToggle.classList.toggle("open"); // anima o ícone
+    navLinks.classList.toggle("active"); // mostra/esconde menu
 });
 
+/* Email */
+(function() {
+    emailjs.init("9gcyy6iP8sB6lYb2f"); // <-- Tua Public Key
+})();
 
+window.onload = function() {
+    const form = document.getElementById('contact-form');
+    const statusMsg = document.getElementById('form-status');
+    const submitBtn = form.querySelector('.submit-btn');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // ✅ Validação básica
+        if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
+            showMessage("Preencha todos os campos obrigatórios!", "red");
+            return;
+        }
+
+        // ✅ Botão e status de envio
+        setLoading(true);
+        showMessage("Enviando mensagem... ⏳", "blue");
+
+        // ✅ Adiciona data/hora oculta
+        const tempoInput = document.createElement("input");
+        tempoInput.type = "hidden";
+        tempoInput.name = "tempo";
+        tempoInput.value = new Date().toLocaleString();
+        form.appendChild(tempoInput);
+
+        // ✅ Envia via EmailJS com um único template
+        emailjs.sendForm('service_yyh7pwq', 'template_UNICO', form)
+        .then(function() {
+            showMessage("Mensagem enviada com sucesso! ✅", "green");
+            form.reset();
+        })
+        .catch(function(error) {
+            console.error("Erro:", error);
+            showMessage("Erro ao enviar ❌, tente novamente.", "red");
+        })
+        .finally(function() {
+            setLoading(false);
+        });
+    });
+
+    // ✅ Funções auxiliares
+    function showMessage(text, color) {
+        statusMsg.textContent = text;
+        statusMsg.style.color = color;
+        setTimeout(() => statusMsg.textContent = "", 6000);
+    }
+
+    function setLoading(isLoading) {
+        if (isLoading) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        } else {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensagem';
+        }
+    }
+};
+ 
